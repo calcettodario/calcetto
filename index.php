@@ -6,19 +6,18 @@
 <div class="container" onmouseup="drop(event)" onmousedown="drag(event)">
 	<div  class="container img_container">
 		<div class="logo_span"></div>
-		<div id="logo" class="logo"></div>
 	</div>
-	<h1>Rione di Merate</h1>
-	<h5>Riunione Sacramentale del <span id="giornoSacramentale"></span></h5>
+	<h1>Prenotazioni Calcetto</h1>
+	<h5>Prenotazioni per il giorno <span id="giornoCalcetto"></span></h5>
 	<div> 
 		<div class="input_container">
-			<label for="name">Famiglia</label><input type="text" id="name" name="name">
-		  	<div>
+			<label for="name">Nome</label><input type="text" id="name" name="name">
+		  	<div class="hide">
 		  		<label for="quantity">Numero</label><input type="number" id="quantity" name="quantity" min="1">
 		  		<img src="up.png" id="up" onclick="increaseNumber(true)">
 		  		<img src="up.png" id="down" onclick="increaseNumber(false)">
 		  	</div>
-		  	<div>
+		  	<div class="hide">
 		  		<label for="daCasa">da Casa</label>
 		  		<label class="switch" onclick="changeLabel()">
 	  				<input id="daCasa" name="daCasa"type="checkbox">
@@ -70,18 +69,7 @@
 
 <div class="jumbotron jumbotron-fluid blue" onmousedown="drag(event)">
 	<div class="container">
-		<span id="annunci">L’accesso ai locali della Chiesa dovrà essere contingentato e rispettare quanto richiesto dalle
-							normative per i luoghi pubblici in emergenza Covid.<br> Questo significa che:
-							<ul>
-								<li>In chiesa potranno accedere un massimo di 35 persone.</li>
-								<li>Per poter entrare bisogna avere mascherina e guanti.</li>
-								<li>All’ingresso verrà misurata la temperatura.</li>
-								<li>All’interno della Chiesa non si potrà fare assembramenti e si dovrà mantenere le distanze.</li>
-								<li>In cappella le sedie saranno distanziate. le persone dello stesso gruppo famigliare potranno stare vicine.</li>
-							</ul>
-							
-							Vi preghiamo di arrivare in Chiesa con almeno 10 minuti di anticipo, in modo da avere il tempo di
-							gestire l’accoglienza ed iniziare in orario la riunione. ☻</span>
+		<span id="annunci">Fate i bravi e ricordatevi che falciare gli amici non &egrave; sportivo.... <br>Ma pu&ograve; far vincere delle partite!</span>
 	</div>
 </div>
 
