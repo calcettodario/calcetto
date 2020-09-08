@@ -65,7 +65,7 @@ book = function(){
 		var daCasa = fromHome.checked ? "Da casa" : "In chiesa";
 		var json = JSON.stringify({'famiglia': nome.value, 'quantita': quantita, 'daCasa':daCasa})
 
-		var uploadURL ="https://api.github.com/repos/malagonius/sacramentale-merate/contents/data.txt";
+		var uploadURL ="https://api.github.com/repos/calcettodario/calcetto/contents/data.txt";
 		var newData = atob(loadedData.content)+"\n"+json;
 		$.ajax({
 		 	type: "PUT",
@@ -74,7 +74,7 @@ book = function(){
 		  	dataType: "json",
 		  	headers: {
 		  		    "accept": "application/vnd.github.v3+json",
-				    "Authorization": "Basic bWFsYWdvbml1czo0NjJhMjZjZjA3ZTMxMTU5NzkyMzFmNjkzNjIxOTk4NzdmYmQ3ODAx",
+				    "Authorization": "Basic Y2FsY2V0dG8uZGFyaW86Y2FsY2V0dG8uREFSSU8x",
 				    "Content-Type": "application/json",
 				},
 		  	data: JSON.stringify({
