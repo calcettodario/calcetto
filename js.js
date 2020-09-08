@@ -73,7 +73,7 @@ book = function(){
 		  	dataType: "json",
 		  	headers: {
 		  		    "accept": "application/vnd.github.v3+json",
-				    "Authorization": "Basic Y2FsY2V0dG8uZGFyaW86Y2FsY2V0dG8uREFSSU8x",
+				    "Authorization": "Basic bWFsYWdvbml1czo0NjJhMjZjZjA3ZTMxMTU5NzkyMzFmNjkzNjIxOTk4NzdmYmQ3ODAx",
 				    "Content-Type": "application/json",
 				},
 		  	data: JSON.stringify({
