@@ -28,17 +28,17 @@
 
 		</div>
 		<p>
-		<div onclick="book()" href="#" id="prenota" class="btn btn-primary"> Prenota posto in Chiesa</div>
+		<div onclick="book()" href="#" id="prenota" class="btn btn-primary"> Prenota posto</div>
 	</div>
 
 	<div id="availability" class="availabilty" >
 		<ul id="booked_list"></ul>
 		<ul id="booked_list_home"></ul>
 		</p>
-		Posti prenotati in chiesa:
+		Posti prenotati:
 		<span id="current"></span> /
 		<span id="limit"></span><br>
-		Partecipazione da casa: <span id="pDaCasa">0</span>
+		<span id="pDaCasa" class="hide">0</span>
 	</div>
 
 	<p class="annunci-container">

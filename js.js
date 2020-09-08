@@ -1,4 +1,4 @@
-var nMassimoPrenotazioni = 35;
+var nMassimoPrenotazioni = 16;
 var nCorrentePersone = 0;
 var curr = document.getElementById("current");
 var limit = document.getElementById("limit");
@@ -58,12 +58,11 @@ changeLabel = function(){
 book = function(){
 	var nome = document.getElementById("name");
 	var fromHome = document.getElementById("daCasa");
-	var quantita = parseInt(quantity.value);
+	var quantita = 1;
 	var pDaCasa = document.getElementById("pDaCasa");
 
 	if(validInputs(nome.value,quantita)){
-		var daCasa = fromHome.checked ? "Da casa" : "In chiesa";
-		var json = JSON.stringify({'famiglia': nome.value, 'quantita': quantita, 'daCasa':daCasa})
+		var json = JSON.stringify({'famiglia': nome.value})
 
 		var uploadURL ="https://api.github.com/repos/calcettodario/calcetto/contents/data.txt";
 		var newData = atob(loadedData.content)+"\n"+json;
@@ -110,7 +109,6 @@ book = function(){
 		});*/
 
 		nome.value=null;
-		quantity.value=null;
 	}
 	
 }
@@ -181,7 +179,7 @@ loadData = function(forceReload){
 	jQuery.ajax({
     type: "GET",
     //url: CORS+'https://raw.github.com/malagonius/sacramentale-merate/master/data.txt',
-    url: "https://api.github.com/repos/malagonius/sacramentale-merate/contents/data.txt",
+    url: "https://api.github.com/repos/calcettodario/calcetto/contents/data.txt",
     dataType: 'json',
     success: function (obj, textstatus) {
       	if( !('error' in obj) ) {
@@ -204,14 +202,9 @@ loadData = function(forceReload){
 	      		jsonRow = JSON.parse(row);
 	      		li = document.createElement("li");
 	      		li.id=jsonRow.famiglia;
-	      		li.innerHTML = "Famiglia: "+jsonRow.famiglia+" | Persone: "+jsonRow.quantita+ " | "+jsonRow.daCasa;
-	      		if(jsonRow.daCasa === "In chiesa"){
-					lista = document.getElementById('booked_list');
-					curr.innerHTML = (parseInt(curr.innerHTML)+jsonRow.quantita);
-				}else{
-					lista = document.getElementById('booked_list_home');
-					pDaCasa.innerHTML = (parseInt(pDaCasa.innerHTML)+jsonRow.quantita);
-				}
+	      		li.innerHTML = "Nome: "+jsonRow.famiglia;
+				lista = document.getElementById('booked_list');
+				curr.innerHTML = (parseInt(curr.innerHTML)+jsonRow.quantita);
 				lista.appendChild(li);
 	      	}
 			
@@ -238,10 +231,6 @@ validInputs = function(nome,quantita){
 	var ret = true;
 	if(nome === ""){
 		alert("perfavore inserire un nome");
-		return false;
-	}
-	if(isNaN(quantita) || quantita==null){
-		alerT("perfavore indicare quanti sarete");
 		return false;
 	}
 	if(parseInt(curr.innerHTML)+quantita > nMassimoPrenotazioni){
