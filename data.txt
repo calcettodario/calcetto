@@ -13,3 +13,4 @@
 {"famiglia":"Asdrubale"}
 {"famiglia":"Lo Zio Degli Zii"}
 {"famiglia":"Puzzone"}
+{"famiglia":"Poor "}
