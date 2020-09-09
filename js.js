@@ -85,7 +85,7 @@ book = function(){
 		  .done(function( msg ) {
 		    console.log( "Data Saved: " + json );
 		    document.getElementById("book_success").classList.remove("fade");
-          	loadData(true);
+          	setTimeout(function(){ loadData(true);}, 1500);
 		  });
 
 
@@ -211,12 +211,17 @@ loadData = function(forceReload){
       	else {
           		console.log(obj.error);
   			}
-  			if(forceReload) window.location.reload(true); //distruggi la cache yeah
+  			if(forceReload) reload();  //distruggi la cache yeah
         }
 
 	});
 
 	
+}
+
+reload = function (){
+	var search = parseInt(window.location.search.substring(window.location.search.length-1,window.location.search.length))+1;
+	window.location.search = "" + isNaN(search) ?  search : "v=1";
 }
 
 cleanLocalLists = function(){
