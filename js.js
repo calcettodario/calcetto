@@ -5,7 +5,6 @@ var limit = document.getElementById("limit");
 var quantity = document.getElementById("quantity");
 var pDaCasa = document.getElementById("pDaCasa");
 var dragEvent = "";
-var accessToken = "?access_token=2fda00e0b47ce4c53fb3c4b69b180f06187075b0";
 var CORS = "https://cors-anywhere.herokuapp.com/";
 var loadedData="\n";
 
@@ -73,7 +72,7 @@ book = function(){
 		  	dataType: "json",
 		  	headers: {
 		  		    "accept": "application/vnd.github.v3+json",
-				    "Authorization": "Basic Y2FsY2V0dG9kYXJpbzpjYWxjZXR0by5EQVJJTzE=",
+				    "Authorization": "token 38622b69c3c239e4f0fb159a86cd67616143c431",
 				    "Content-Type": "application/json",
 				},
 		  	data: JSON.stringify({
@@ -204,7 +203,7 @@ loadData = function(forceReload){
 	      		li.id=jsonRow.famiglia;
 	      		li.innerHTML = "Nome: "+jsonRow.famiglia;
 				lista = document.getElementById('booked_list');
-				curr.innerHTML = (parseInt(curr.innerHTML)+jsonRow.quantita);
+				curr.innerHTML = (parseInt(curr.innerHTML)+1);
 				lista.appendChild(li);
 	      	}
 			
