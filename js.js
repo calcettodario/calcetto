@@ -220,8 +220,7 @@ loadData = function(forceReload){
 }
 
 reload = function (){
-	var search = parseInt(window.location.search.substring(window.location.search.length-1,window.location.search.length))+1;
-	window.location.search = "" + isNaN(search) ?  "v=1" : search;
+	window.location.search = "v=" + Math.random();
 }
 
 cleanLocalLists = function(){
