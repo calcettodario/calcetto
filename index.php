@@ -5,7 +5,7 @@
 
 <div class="container" onmouseup="drop(event)" onmousedown="drag(event)">
 	<div  class="container img_container">
-		<div class="logo_span"></div>
+		<div id="logo" class="logo_span"></div>
 	</div>
 	<h1>Prenotazioni Calcetto</h1>
 	<h5>Prenotazioni per il giorno <span id="giornoCalcetto"></span></h5>
