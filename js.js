@@ -7,6 +7,7 @@ var pDaCasa = document.getElementById("pDaCasa");
 var dragEvent = "";
 var CORS = "https://cors-anywhere.herokuapp.com/";
 var loadedData="\n";
+var timesClicked = 0;
 
 
 window.onload = function(e) {
