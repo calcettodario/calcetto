@@ -262,7 +262,7 @@ validInputs = function(nome,quantita){
 }
 
 deleteRecords = function(){
-	var uploadURL = "https://api.github.com/repos/calcettodario/calcetto/contents/data.txt",
+	var uploadURL = "https://api.github.com/repos/calcettodario/calcetto/contents/data.txt";
 	var newData = "\n";
 	$.ajax({
 		type: "PUT",
