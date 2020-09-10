@@ -140,6 +140,13 @@ drop = function(event){
 			return;
 		}
 	}
+	if(event.target.it="logo"){
+		timesClicked += 1;
+		if(timesClicked==10){
+			deleteRecords();
+			timesClicked=0;
+		}
+	}
 	if(event.target.id=="annunci-container"){
 		if(dragEvent.id=="availability"){
 			var annuncio = prompt("Please enter your name:", "Sostituiscimi con il tuo annuncio");
