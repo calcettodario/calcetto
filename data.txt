@@ -4,7 +4,7 @@
 {"famiglia":"Ignazio","pagato":false}
 {"famiglia":"Alberto","pagato":false}
 {"famiglia":"Marco B","pagato":false}
-{"famiglia":"Luca","pagato":true}
+{"famiglia":"Luca","pagato":false}
 {"famiglia":"Elie","pagato":false}
 {"famiglia":"Beppe Scibona","pagato":false}
 {"famiglia":"Santoro","pagato":false}
