@@ -143,7 +143,52 @@ drop = function(event){
 	if(event.target.it="logo"){
 		timesClicked += 1;
 		if(timesClicked==10){
-			deleteRecords();
+			$("#exampleModal").modal();
+			var list = data.split(/\r?\n/);
+	      	var li = null;
+	      	var lista = null;
+	      	var jsonRow = null;
+	      	var div = null;
+	      	var checkbox = null;
+	      	var index = 0;
+	      	var lista = document.getElementById('admin_list');
+	      	lista.innerHTML = "";
+			for(row of list){
+	      		if(row==""){
+	      			continue;
+	      		}
+	      		jsonRow = JSON.parse(row);
+
+	      		//init row
+	      		div = document.createElement("div");
+	      		div.classList.add("row");
+	      		//init checkbox
+	      		checkbox = document.createElement('input');
+				checkbox.type = "checkbox";
+				checkbox.name = "name_"+jsonRow.famiglia;
+				checkbox.value = "famiglia_"+jsonRow.famiglia;
+				checkbox.id = "checkBox_"+jsonRow.famiglia;
+				checkbox.checked = jsonRow.pagato;
+				checkbox.jsonRow = jsonRow;
+				checkbox.classList.add("col-6");
+				checkbox.index=index;
+				checkbox.addEventListener("change", function(){
+					console.log(this.jsonRow);
+					document.getElementById("admin_list").getElementsByTagName("li")[this.index].innerHTML = "Nome: "+this.jsonRow.famiglia+ " ha pagato: " + (this.checked ? "si" : "no");
+				})
+	      		
+	      		//init li
+	      		li = document.createElement("li");
+	      		li.classList.add("col-6");
+	      		li.id=jsonRow.famiglia;
+	      		li.pagato = jsonRow.pagato ? "si" : "no";
+	      		li.innerHTML = "Nome: "+jsonRow.famiglia+ " ha pagato: " + (jsonRow.pagato ? "si" : "no");
+
+				div.appendChild(li);
+				div.appendChild(checkbox);
+				lista.appendChild(div);
+				index++;
+	      	}
 			timesClicked=0;
 		}
 	}
@@ -293,4 +338,43 @@ deleteRecords = function(){
 	    loadData();
 	  });
 	
+}
+
+saveChanges = function(){
+	console.log("salva");
+
+	var rows = document.getElementById("admin_list").getElementsByTagName("div");
+	var content="\n";
+	for (var i = 0 ; i < rows.length; i++) {
+		content += "\n"+JSON.stringify({'famiglia': rows[i].children[0].id,'pagato': rows[i].children[1].checked});
+	}
+		var uploadURL ="https://api.github.com/repos/calcettodario/calcetto/contents/data.txt";
+		var newData = content;
+		$.ajax({
+		 	type: "PUT",
+		 	url: uploadURL,
+		  	contentType: "application/json",
+		  	dataType: "json",
+		  	headers: {
+		  		    "accept": "application/vnd.github.v3+json",
+				    "Authorization": "Basic bWFsYWdvbml1czo0NjJhMjZjZjA3ZTMxMTU5NzkyMzFmNjkzNjIxOTk4NzdmYmQ3ODAx",
+				    "Content-Type": "application/json",
+				},
+		  	data: JSON.stringify({
+    			"message": "payment changes",
+    			"content": btoa(newData),
+    			"sha": loadedData.sha
+		    }),
+		  
+		})
+		  .done(function( msg ) {
+		    document.getElementById("book_success").classList.remove("fade");
+          	setTimeout(function(){ loadData(true);}, 1500);
+		  });
+}
+
+deleteRecords = function(){
+	if(confirm("premere ok per cancellare tutti dalla lista")){
+		deleteRecords();
+	};
 }
