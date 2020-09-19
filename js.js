@@ -244,19 +244,32 @@ loadData = function(forceReload){
 	      	var li = null;
 	      	var lista = null;
 	      	jsonRow = null;
+	      	var div = null;
+	      	var span = null;
 
 	      	cleanLocalLists();
 	      	for(row of list){
 	      		if(row==""){
 	      			continue;
 	      		}
+
 	      		jsonRow = JSON.parse(row);
+
+	      		div = document.createElement("div");
+	      		div.className="row "+(jsonRow.pagato ? "pagato" : "");
+
+	      		span = document.createElement("span");
+	      		span.classList.add("col-6");
+	      		span.innerHTML = (jsonRow.pagato ? "Ha pagato": "Non ha ancora pagato");
 	      		li = document.createElement("li");
+	      		li.classList.add("col-6");
 	      		li.id=jsonRow.famiglia;
 	      		li.innerHTML = "Nome: "+jsonRow.famiglia;
 				lista = document.getElementById('booked_list');
 				curr.innerHTML = (parseInt(curr.innerHTML)+1);
-				lista.appendChild(li);
+				div.appendChild(li);
+				div.appendChild(span);
+				lista.appendChild(div);
 	      	}
 			
       	}

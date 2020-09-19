@@ -28,6 +28,8 @@
 
 input{width:80%;margin-left: 10px;padding-left: 15px}
 
+#booked_list .row.pagato{color:green;}
+
 #book_success{
     display: block;
     position: fixed;
@@ -95,6 +97,8 @@ label{width:65px;}
 #booked_list{display: inline-grid; border-bottom: 2px dotted;}
 
 #booked_list_home{display: inline-grid;}
+
+#booked_list .row{color:red;}
 
 #admin_list .row{margin-bottom:5px;}
 
