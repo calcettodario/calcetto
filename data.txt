@@ -1,8 +1,12 @@
 
 
-{"famiglia":"Dario","pagato":false}
-{"famiglia":"Ignazio","pagato":false}
-{"famiglia":"Alberto","pagato":false}
-{"famiglia":"Marco B","pagato":false}
-{"famiglia":"Luca","pagato":false}
-{"famiglia":"Elie","pagato":false}
+{"famiglia":"Dario"}
+{"famiglia":"Ignazio"}
+{"famiglia":"Alberto"}
+{"famiglia":"Marco B"}
+{"famiglia":"Luca"}
+{"famiglia":"Elie"}
+{"famiglia":"Beppe Scibona"}
+{"famiglia":"Santoro"}
+{"famiglia":"Giancarlo "}
+{"famiglia":"Marco ospedale"}
