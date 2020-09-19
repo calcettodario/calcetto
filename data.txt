@@ -6,4 +6,3 @@
 {"famiglia":"Marco B","pagato":false}
 {"famiglia":"Luca","pagato":false}
 {"famiglia":"Elie","pagato":false}
-{"famiglia":"Beppe Scibona","pagato":false}
