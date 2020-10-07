@@ -1,13 +1,4 @@
 
-
-{"famiglia":"Luca"}
-{"famiglia":"Barbera"}
-{"famiglia":"Ignazio"}
-{"famiglia":"Bensi"}
-{"famiglia":"Santoro"}
-{"famiglia":"Cluadio"}
-{"famiglia":"Donato"}
-
 {"famiglia":"Dario"}
 {"famiglia":"Silvio"}
 {"famiglia":"Luis"}
