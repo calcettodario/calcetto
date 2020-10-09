@@ -11,4 +11,3 @@
 {"famiglia":"beppe scibona"}
 {"famiglia":"Giancarlo"}
 {"famiglia":"Santoro"}
-{"famiglia":"Giancarlo "}
